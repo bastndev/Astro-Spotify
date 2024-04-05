@@ -12,8 +12,8 @@ const artistString = artists.join(", ");
 ---
 
 <a
-href={`/playlist/${id}`}
-class="playlist-item flex relative p-2 overflow-hidden items-center gap-5 rounded-md hover:bg-zinc-800"
+  href={`/playlist/${id}`}
+  class="playlist-item flex relative p-2 overflow-hidden items-center gap-5 rounded-md hover:bg-zinc-800"
 >
   <picture class="h-12 w-12 flex-none">
     <img
@@ -23,5 +23,8 @@ class="playlist-item flex relative p-2 overflow-hidden items-center gap-5 rounde
     />
   </picture>
 
-
+  <div class="flex flex-auto flex-col truncate">
+    <h4 class="font-bold">{title}</h4>
+    <h2 class="text-gray-300">{artists}</h2>
+  </div>
 </a>
