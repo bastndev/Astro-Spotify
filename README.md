@@ -63,3 +63,16 @@ import { ViewTransitions } from "astro:transitions";
 
 <ViewTransitions fallback="none" />
 ```
+>- add id similar in all is unico
+```
+    <header class="flex flex-col gap-8 px-6">
+      <picture class="aspect-square w-52 h-52 flex-none">
+        <img
+          src={playlist?.cover}
+          alt={`Cover of ${playlist?.title}`}
+          class="object-cover w-full h-full rounded-md"
+          transition:name=`playlist ${playlist?.id} image`
+        />
+      </picture>
+    </header>
+```

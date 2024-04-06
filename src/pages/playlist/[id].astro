@@ -12,10 +12,21 @@ const playListSongs = songs.filter(song => song.albumId === playlist?.albumId)
 <Layout title="Welcome to Astro.">
 	<div
 		id="playlist-container"
-		class="relative transition-all duration-1000 bg-green-600"
+		class="relative flex flex-col bg-zinc-900 overflow-x-hidden"
     transition:name=`playlist ${id} box`
 	>
 		<!-- <Page Header /> -->
+    <header class="flex flex-col gap-8 px-6">
+      <picture class="aspect-square w-52 h-52 flex-none">
+        <img
+          src={playlist?.cover}
+          alt={`Cover of ${playlist?.title}`}
+          class="object-cover w-full h-full rounded-md"
+          transition:name=`playlist ${playlist?.id} image`
+        />
+      </picture>
+    </header>
+
 		<div class="relative z-10 px-6 pt-10">
 		</div>
 		<div
