@@ -14,7 +14,10 @@ import PlayLisItemtCard from "@/components/PlayLisItemtCard.astro";
 		<div class="relative z-10 px-6">
 			<!-- <Greatings /> -->
 			<h1 class="text-xl">Good Morning</h1>
-			{playlists.map((playlists) => <PlayLisItemtCard playlist={playlists} />)}
+
+			<div class="flex  flex-wrap mt-6 gap-4">
+				{playlists.map((playlists) => <PlayLisItemtCard playlist={playlists} />)}
+			</div>
 		</div>
 		<div
 			class="absolute inset-0 bg-gradient-to-t from-zinc-900 via-zinc-900/80"

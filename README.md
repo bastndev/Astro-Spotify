@@ -13,6 +13,9 @@
 │       └── index.astro
 └── package.json
 ```
+
+![just-the-basics](public/imges/github/spotify.png)
+
 1. grid, para hacer grillas
 
 2. Button Home Search
