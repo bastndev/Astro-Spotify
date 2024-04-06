@@ -1,6 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Card from "../components/Card.astro";
+
+import { playlists } from "@/lib/data";
+import PlayLisItemtCard from "@/components/PlayLisItemtCard.astro";
 ---
 
 <Layout title="Welcome to Astro.">
@@ -11,7 +13,14 @@ import Card from "../components/Card.astro";
 		<!-- <Page Header /> -->
 		<div class="relative z-10 px-6">
 			<!-- <Greatings /> -->
-			<h1>s</h1>
+			<h1 class="text-xl">Good Morning</h1>
+			{playlists.map((playlists) => <PlayLisItemtCard playlist={playlists} />)}
+		</div>
+		<div
+			class="absolute inset-0 bg-gradient-to-t from-zinc-900 via-zinc-900/80"
+		>
 		</div>
 	</div>
 </Layout>
+
+<style></style>

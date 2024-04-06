@@ -27,3 +27,11 @@
     </ul>
   </div>
 ```
+
+3. degradado
+```
+<div
+			class="absolute inset-0 bg-gradient-to-t from-zinc-900 via-zinc-900/80"
+		>
+		</div>
+```    
