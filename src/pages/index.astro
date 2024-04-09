@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 
 import { playlists } from "@/lib/data";
 import PlayLisItemtCard from "@/components/PlayLisItemtCard.astro";
+import Greeting from "@/components/Greeting.svelte";
 ---
 
 <Layout title="Welcome to Astro.">
@@ -11,12 +12,14 @@ import PlayLisItemtCard from "@/components/PlayLisItemtCard.astro";
 		class="relative transition-all duration-1000 bg-green-600"
 	>
 		<!-- <Page Header /> -->
-		<div class="relative z-10 px-6">
-			<!-- <Greatings /> -->
-			<h1 class="font-bold pt-4 text-2xl">Good Morning</h1>
-
-			<div class="flex  flex-wrap mt-6 gap-4">
-				{playlists.map((playlists) => <PlayLisItemtCard playlist={playlists} />)}
+		<div class="relative z-10 px-6 pt-10">
+			<Greeting />
+			<div class="flex flex-wrap mt-6 gap-4">
+				{
+					playlists.map((playlists) => (
+						<PlayLisItemtCard playlist={playlists} />
+					))
+				}
 			</div>
 		</div>
 		<div
