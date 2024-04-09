@@ -2,7 +2,7 @@
 import { Pause, Play } from "./Player"
 import { usePlayerStore } from "@/store/playerStore" // you can read from Vue Svelte React
 
-export function CardPlayButton({ id }) {
+export function CardPlayButton({ id, sized = 'small' }) {
   const { currentMusic, isPlaying, setIsPlaying, setCurrentMusic } = usePlayerStore(state => state)
 
   const isPlayingPlayList = isPlaying && currentMusic?.playlist.id === id
@@ -33,7 +33,7 @@ export function CardPlayButton({ id }) {
   }
 
   return (
-    <button onClick={handleClick} className="card-play-button bg-green-500 p-4 rounded-full">
+    <button onClick={handleClick} className="card-play-button bg-green-500 p-4 rounded-full hover:scale-105 transition hover:bg-green-400">
       {isPlayingPlayList ? <Pause /> : <Play />}
     </button >
   )

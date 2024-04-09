@@ -4,6 +4,7 @@ import Layout from "../../layouts/Layout.astro";
 
 import PlayLisItemtCard from "@/components/PlayLisItemtCard.astro";
 import { allPlaylists, songs } from "@/lib/data";
+import { CardPlayButton } from "@/components/CardPlayButton";
 
 const { id } = Astro.params;
 const playlist = allPlaylists.find((playlist) => playlist.id === id);
@@ -52,6 +53,9 @@ const playListSongs = songs.filter(
 			</div>
 		</header>
 
+		<div class="pl-6 pt-6">
+			<CardPlayButton id={id} client:load />
+		</div>
 		<div class="relative z-10 px-6 pt-10"></div>
 		<div
 			class="absolute inset-0 bg-gradient-to-t from-zinc-900 via-zinc-900/20 -z-10"
