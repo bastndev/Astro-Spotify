@@ -9,23 +9,31 @@ export const Play = () => (
   <svg className={Play} role="img" height="16" width="16" aria-hidden="true" viewBox="0 0 16 16"><path d="M3 1.713a.7.7 0 0 1 1.05-.607l10.89 6.288a.7.7 0 0 1 0 1.212L4.05 14.894A.7.7 0 0 1 3 14.288V1.713z"></path></svg>
 )
 
+
+const CurrentSong = ({ image, title }) => {
+  
+}
+
 export function player() {
-  const { isPlaying, setIsPlaying } = usePlayerStore(state => state)
-  const [CurrentSong, setCurrentSong] = useState(null)
+  const { currentMusic, isPlaying, setIsPlaying } = usePlayerStore(state => state)
   const audioRef = useRef()
 
   useEffect(() => {
-    audioRef.current.src = `/music/1/01.mp3`
-  }, [])
+    isPlaying
+      ? audioRef.current.play()
+      : audioRef.current.pause()
+  }, [isPlaying])
+
+  useEffect(() => {
+    const { song, playlist, songs } = currentMusic
+    if (song) {
+      const src = `/music/${playlist?.id}/0${song.id}.mp3`
+      audioRef.current.src = src
+      audioRef.current.play()
+    }
+  }, [currentMusic])
 
   const handleClick = () => {
-    if (isPlaying) {
-      audioRef.current.pause()
-    } else {
-      audioRef.current.play()
-      // audioRef.current.volume = 0.1
-    }
-
     setIsPlaying(!isPlaying)
   }
 
